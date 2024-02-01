@@ -1,5 +1,10 @@
+import 'dart:developer';
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:myproject/Student/home.dart';
 
 class LoginAsCM extends StatefulWidget {
   const LoginAsCM({Key? key}) : super(key: key);
@@ -11,6 +16,29 @@ class LoginAsCM extends StatefulWidget {
 class _LoginAsCM extends State<LoginAsCM> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  void login()async{
+    String email = _emailController.text.trim();
+    String password = _passwordController.text.trim();
+    if(email==""||password==""){
+      log("Please fill all the fields");
+    }
+    else{
+      try{
+        UserCredential userCredential=  await FirebaseAuth.instance.signInWithEmailAndPassword(
+            email: email, password: password);
+        if(userCredential.user!=null){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const MyHome()),
+          );
+        }
+
+      } on FirebaseAuthException catch(ex){
+        log(ex.code.toString());
+      }
+
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -82,17 +110,11 @@ class _LoginAsCM extends State<LoginAsCM> {
                           SizedBox(
                             height: 30,
                           ),
-                          ElevatedButton(
-                            onPressed: () => {
-                            },
-                            child: Text('Login'),
-                            style: ButtonStyle(
-                              padding: MaterialStateProperty.all(EdgeInsets.all(18)),
-                              elevation: MaterialStatePropertyAll(9),
-                              fixedSize: MaterialStatePropertyAll(
-                                  Size.fromWidth(600)
-                              ),
-                            ),
+                          CupertinoButton.filled(
+                            onPressed: login,  // Remove the semicolon after login
+                            child: const Text('Login', style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white)),
                           ),
                         ],
                       ),

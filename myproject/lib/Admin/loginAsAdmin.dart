@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../Student/home.dart';
+
 class MyLoginAsAdmin extends StatefulWidget {
   const MyLoginAsAdmin({Key? key}) : super(key: key);
 
@@ -99,6 +101,11 @@ class _MyLoginAsAdmin extends State<MyLoginAsAdmin> {
                           ),
                           ElevatedButton(
                             onPressed: () => {
+
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const MyHome()),
+                            ),
                             },
                             child: Text('Login'),
                             style: ButtonStyle(

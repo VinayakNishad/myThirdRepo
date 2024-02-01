@@ -1,84 +1,48 @@
-import 'package:flutter/material.dart';
-class Leaderboard extends StatefulWidget {
-
-  @override
-  _LeaderboardState createState() => _LeaderboardState();
-}
-
-class _LeaderboardState extends State<Leaderboard> {
-  @override
-  Widget build(BuildContext context) {
-    var arr_class = ['TYBSC','SYBSC','FYBSC','TYBcom','FoBsc'];
-    return Scaffold(
-      appBar: AppBar(title: Text('Leaderboard')),
-      body: ListView.separated(itemBuilder: (context, index) {
-        return Text(arr_class[index],
-          style: TextStyle(fontSize: 21,fontWeight: FontWeight.w500,),
-        );
-      },
-      itemCount: arr_class.length,
-        separatorBuilder: (context,index){
-        return Divider(height: 50,thickness: 2,);
-        },
-      ),
-      // body: ListView(
-      //   scrollDirection: Axis.vertical,
-      //   reverse: false,
-      //   children: [
-      //     Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),
-      //     Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),Padding(padding: const EdgeInsets.all(8.0),
-      //       child:Text('TYBSC',style: TextStyle(fontSize: 20),),
-      //     ),
-      //
-      //
-      //
-      //
-      //
-      //
-      //
-      //
-      //
-      //
-      //
-      //
-      //
-      //
-      //
-      //   ],
-      // )
-    );
-
-  }
-}
+// import 'package:flutter/material.dart';
+// class Leaderboard extends StatefulWidget {
+//
+//   @override
+//   _LeaderboardState createState() => _LeaderboardState();
+// }
+// class User {
+//   final String name;
+//   final int score;
+//   User(this.name, this.score);
+// }
+//
+// class _LeaderboardState extends State<Leaderboard> {
+//   @override
+//   final List<User> users = [
+//     User('User1', 100),
+//     User('User2', 80),
+//     User('User3', 120),
+//     User('User4', 90),
+//     User('User5', 110),
+//     User('User6', 100),
+//     User('User7', 10),
+//   ];
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Leaderboard'),
+//         ),
+//         body: ListView.builder(
+//           itemCount: users.length,
+//           itemBuilder: (context, index) {
+//             return ListTile(
+//               title: Text(users[index].name),
+//               subtitle: Text('Score: ${users[index].score}'),
+//               leading: CircleAvatar(
+//                 child: Text((index + 1).toString()), // Display rank
+//               ),
+//             );
+//           },
+//         ),
+//       ),
+//     );
+//
+//   }
+// }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Leaderboard.dart';
+import 'package:myproject/LeaderBoard/LeaderMain.dart';
 import 'MainPage.dart';
 import 'Setting.dart';
 import 'UpcomingEvents.dart';
@@ -17,7 +17,7 @@ class _MyHomeState extends State<MyHome> {
     MainPage(),
     UpcomingEvents(),
     Setting(),
-    Leaderboard(),
+    LeaderMain(),
 
   ];
   final PageStorageBucket bucket = PageStorageBucket();

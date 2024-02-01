@@ -12,10 +12,10 @@ class _MainPageState extends State<MainPage> {
 
     var arrEvents=["Dances","Singing","TreasureHunt","FashionShow","PosterMaking"];
     return Scaffold(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.white12,
         appBar: AppBar(
           elevation: 67,
-          backgroundColor: Colors.lightBlue,
+          backgroundColor: Colors.white30,
           centerTitle: true,
           title:cusSearchBar,
           actions: <Widget>[
@@ -26,9 +26,9 @@ class _MainPageState extends State<MainPage> {
                 child: IconButton(
                   onPressed: () {
                     setState(() {
-                      if(this.cusIcon.icon==Icons.search){
-                        this.cusIcon = Icon(Icons.search_off);
-                        this.cusSearchBar=TextField(
+                      if(cusIcon.icon==Icons.search){
+                        cusIcon = const Icon(Icons.search_off);
+                        cusSearchBar=const TextField(
                           keyboardType: TextInputType.text,
                           decoration: InputDecoration(
                             fillColor: Colors.white,
@@ -43,8 +43,8 @@ class _MainPageState extends State<MainPage> {
                         );
                       }
                       else{
-                        this.cusIcon =Icon(Icons.search);
-                        this.cusSearchBar =Text("Events");
+                        cusIcon =const Icon(Icons.search);
+                        cusSearchBar =const Text("Events");
                       }
                     });
                   }, icon: cusIcon,

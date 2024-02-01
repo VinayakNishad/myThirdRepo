@@ -29,7 +29,10 @@ class _MyLoginState extends State<MyLogin> {
         UserCredential userCredential=  await FirebaseAuth.instance.signInWithEmailAndPassword(
             email: email, password: password);
         if(userCredential.user!=null){
-          log("Please f");
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const MyHome()),
+          );
         }
 
       } on FirebaseAuthException catch(ex){
