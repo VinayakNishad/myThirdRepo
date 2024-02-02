@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myproject/GenerateCertificate/CertificateGenerator.dart';
 import 'package:myproject/LeaderBoard/LeaderMain.dart';
 import 'MainPage.dart';
 import 'Setting.dart';
@@ -18,19 +19,19 @@ class _MyHomeState extends State<MyHome> {
     UpcomingEvents(),
     Setting(),
     LeaderMain(),
-
   ];
   final PageStorageBucket bucket = PageStorageBucket();
   Widget currentScreen = MainPage();
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Campus Connect',
-        style: TextStyle(fontSize: 16),),
+        title: Text(
+          'Campus Connect',
+          style: TextStyle(fontSize: 16),
+        ),
       ),
       drawer: Drawer(
         child: ListView(
@@ -45,14 +46,12 @@ class _MyHomeState extends State<MyHome> {
             ListTile(
               title: Text('x'),
               onTap: () {
-
                 Navigator.pop(context);
               },
             ),
             ListTile(
               title: Text('y'),
               onTap: () {
-                Navigator.pop(context);
               },
             ),
           ],
@@ -61,25 +60,24 @@ class _MyHomeState extends State<MyHome> {
       body: PageStorage(
         child: currentScreen,
         bucket: bucket,
-
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: Container(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
+      bottomNavigationBar: LayoutBuilder(
+        builder: (context, constraints) {
+          return BottomAppBar(
+            child: Container(
+              height: constraints.maxHeight * 0.08,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
                   buildNavBarItem(Icons.home, 'Home', 0),
                   buildNavBarItem(Icons.search, 'Events', 1),
                   buildNavBarItem(Icons.settings, 'Results', 2),
                   buildNavBarItem(Icons.leaderboard, 'Leaderboard', 3),
                 ],
-              )
-            ],
-          ),
-        ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }

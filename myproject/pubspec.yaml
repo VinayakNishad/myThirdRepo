@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   hidden_drawer_menu: ^3.0.1
+  pdf: ^3.4.0
 
 
 
