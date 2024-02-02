@@ -12,7 +12,7 @@ class _MainPageState extends State<MainPage> {
 
     var arrEvents=["Dances","Singing","TreasureHunt","FashionShow","PosterMaking"];
     return Scaffold(
-        backgroundColor: Colors.white12,
+        backgroundColor: Colors.black87,
         appBar: AppBar(
           elevation: 67,
           backgroundColor: Colors.white30,
